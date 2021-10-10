@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メモ機能（きのう）</title>
+    <link rel="icon" href="hint.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/memo.css">
+  </head>
+
+  <body>
+    <div class = "back">
+      <button id="btn99" type="button" onclick="history.back()">back</button>
+    </div>
+    
+    <header>
+        <h1>メモ機能（きのう）</h1>
+        <h2>LocalStorage</h1>
+    </header>
+
+    <main>
+      <div class="field01">
+        <label for="textKey">Key:</label>
+        <textarea id="textKey" name="textKey" rows="1" cols="40" autofocus placeholder="キーを入力してください"></textarea>
+      </div>
+
+      <div class="field02">
+        <label for="textMemo">Memo:</label>
+        <textarea id="textMemo" name="textMemo" rows="5" cols="40" autofocus placeholder="件名を入力してください"></textarea>
+      </div>
+
+      <div class="btn-area">
+        <input id="save" type="submit" class="btn" value="保存">
+      </div>
+        
+    </main>
+    <footer>
+      <p>
+          <i class="fa fa-rocket" aria-hidden="true"></i>
+          <span class="mgn-01">Copyright 2021 SunDai_NguyenThiHuyenVi</span>
+          <i class="fa fa-rocket faa-float animated font06" aria-hidden="true"></i>
+      </p>
+  </footer>
+    
+    <script src="js/memo.js"></script>
+  </body>
+
+</html>
