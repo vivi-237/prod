@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded",
             viewStorage();
             saveLocalStorage();
             delLocalStorage();
+            allClearLocalStorage();
             selectTable();
         }
     },false
@@ -61,6 +62,25 @@ function delLocalStorage(){
 
 };
 
+function allClearLocalStorage(){
+    const allClear = document.getElementById("allClear");
+    allClear.addEventListener("click",
+        function(e){
+            e.preventDefault();
+            let w_confirm = confirm("LocalStorageのデータをすべて削除(all clear)します。\nよろしですか？");
+
+            if(w_confirm === true){
+                localStorage.clear();
+                viewStorage();
+                let w_msg = "このページの内容 LocalStorageのデータをすべて削除(all clear)しました。";
+                window.alert(w_msg);
+                document.getElementById("textKey").value = "";
+                document.getElementById("textMemo").value = "";
+            }
+        },false
+    );
+};
+
 function selectTable(){
     const select = document.getElementById("select");
     select.addEventListener("click",
@@ -107,4 +127,11 @@ function viewStorage(){
         td2.innerHTML = w_key;
         td3.innerHTML = localStorage.getItem(w_key);
     }
+
+    //jQuery-sortList
+    $("#table1").tablesorter({
+        sortList: [[1,0]]       //後の数字=0: 昇順 <---> =1: 降順
+    });
+
+    $("#table1").trigger("update");
 };
